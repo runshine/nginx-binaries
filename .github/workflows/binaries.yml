@@ -153,6 +153,7 @@ jobs:
           - x86_64
           - aarch64
           - ppc64le
+          - armv7
         include:
           - NJS_VERSION: 0.x.x
           # Pin older njs version for old stable nginx.
