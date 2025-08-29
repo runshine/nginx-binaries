@@ -119,7 +119,7 @@ case "$HOST_OS" in
 	;;
 esac
 
-LDFLAGS="-lzstd" make
+make
 
 ls -lah objs
 strip objs/nginx$EXEEXT
