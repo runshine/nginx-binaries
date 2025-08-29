@@ -23,11 +23,12 @@ export SKIP_SAME_SOURCES="true"
 
 apt-get update -qq && apt install -qq -y libedit-dev libncurses-dev libssl-dev libpcre2-dev libzstd-dev libz-dev libjansson-dev file
 
-ls -lRt "${HOME_SPACE}"
 cd "${HOME_SPACE}"
+echo "check openssl info"
 pkg-config --modversion openssl
 pkg-config --cflags openssl
 pkg-config --libs openssl
+find / -name "libssl*"
 
 "${HOME_SPACE}/scripts/build-nginx"
 mkdir -p "${INSTALL_DIR}/bin/"
