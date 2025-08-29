@@ -61,6 +61,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Download and extract nginx
+        run: ./scripts/fetch-sources -d . nginx/nginx@release-${{ matrix.NGINX_VERSION }}
+
+      - name: Download and extract nginx modules
+        run: ./scripts/fetch-sources nginx/njs@${{ matrix.NJS_VERSION }} $NGINX_MODULES
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
