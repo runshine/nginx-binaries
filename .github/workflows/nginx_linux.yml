@@ -10,6 +10,7 @@ on:
       - .github/workflows/nginx_linux.yml
       - patches/*
       - scripts/*
+      - build.sh
 
 
 env:
