@@ -63,8 +63,8 @@ jobs:
             build_arch: linux/riscv64
           - NJS_VERSION: 0.x.x
           # Pin older njs version for old stable nginx.
-          - NGINX_VERSION: 1.26.x
-            NJS_VERSION: 0.8.x
+          #- NGINX_VERSION: 1.26.x
+          #  NJS_VERSION: 0.8.x
     steps:
       - name: Checkout
         uses: actions/checkout@v4
