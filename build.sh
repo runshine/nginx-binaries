@@ -24,6 +24,9 @@ export SKIP_SAME_SOURCES="true"
 apt-get update -qq && apt install -qq -y libedit-dev libncurses-dev libssl-dev libpcre2-dev libzstd-dev libz-dev libjansson-dev file
 
 cd "${HOME_SPACE}"
+
+./scripts/fetch-sources -d . nginx/nginx@release-1.28.x
+./scripts/fetch-sources nginx/njs@0.x.x $NGINX_MODULES
 echo "check openssl info"
 pkg-config --modversion openssl
 pkg-config --cflags openssl
