@@ -11,7 +11,7 @@ mkdir -p "${HOME_SPACE}/install"
 SOURCE_DIR="${HOME_SPACE}/source"
 INSTALL_DIR="${HOME_SPACE}/install"
 
-apt-get install -y curl ca-certificates wget libssl-dev autoconf make cmake xz-utils flex bison
+apt-get install -y curl ca-certificates wget libssl-dev autoconf make cmake xz-utils flex bison pkg-config
 
 export CFLAGS="-Os -fomit-frame-pointer -pipe"
 export LDFLAGS="-static -Wl,--as-needed -Wl,-Map,linker.map"
@@ -25,6 +25,10 @@ apt-get update -qq && apt install -qq -y libedit-dev libncurses-dev libssl-dev l
 
 ls -lRt "${HOME_SPACE}"
 cd "${HOME_SPACE}"
+pkg-config --modversion openssl
+pkg-config --cflags openssl
+pkg-config --libs openssl
+
 "${HOME_SPACE}/scripts/build-nginx"
 mkdir -p "${INSTALL_DIR}/bin/"
 ls -lRt "${HOME_SPACE}"
