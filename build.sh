@@ -12,9 +12,7 @@ SOURCE_DIR="${HOME_SPACE}/source"
 INSTALL_DIR="${HOME_SPACE}/install"
 
 export CFLAGS="-Os -fomit-frame-pointer -pipe"
-export LINUX_LDFLAGS="-static -Wl,--as-needed -Wl,-Map,linker.map"
-export DARWIN_LDFLAGS="-Wl,-map,linker.map"
-export WIN32_LDFLAGS="-Wl,--as-needed -Wl,-Map,linker.map"
+export LDFLAGS="-static -Wl,--as-needed -Wl,-Map,linker.map"
 export NGINX_MODULES="kjdev/nginx-auth-jwt kjdev/nginx-keyval vision5/ngx_devel_kit openresty/echo-nginx-module openresty/headers-more-nginx-module openresty/set-misc-nginx-module"
   # The same as above, but for Windows.
   # - kjdev/nginx-auth-jwt, kjdev/nginx-keyval: a bit complicated to build (TODO)
