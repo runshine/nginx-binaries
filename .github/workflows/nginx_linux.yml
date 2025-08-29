@@ -89,7 +89,6 @@ jobs:
           push: false
           tags: local_nginx:latest
           file: Dockerfile
-          env: 
           outputs: |
             type=local,dest=${{ github.workspace }}/output
 
