@@ -100,7 +100,7 @@ module_flags=$(add_module $NGINX_MODULES)
 
 case "$HOST_OS" in
 	linux)
-		configure --with-file-aio --with-threads $module_flags
+		LDFLAGS="-lzstd" configure --with-file-aio --with-threads $module_flags
 	;;
 	darwin)
 		configure --with-threads $module_flags
@@ -119,7 +119,7 @@ case "$HOST_OS" in
 	;;
 esac
 
-make
+LDFLAGS="-lzstd" make
 
 ls -lah objs
 strip objs/nginx$EXEEXT
