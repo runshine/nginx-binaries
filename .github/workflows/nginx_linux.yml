@@ -49,14 +49,12 @@ jobs:
           #- 1.26.x
           #- 1.27.x
           - 1.28.x
-        build_arch: [linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v5,linux/riscv64]
+        build_arch: [linux/amd64,linux/arm64/v8,linux/arm/v5,linux/riscv64]
         include:
           - build_name: x86_64
             build_arch: linux/amd64
           - build_name: aarch64
             build_arch: linux/arm64/v8
-          - build_name: armhf
-            build_arch: linux/arm/v7
           - build_name: armel
             build_arch: linux/arm/v5
           - build_name: riscv64
