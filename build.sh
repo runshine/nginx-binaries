@@ -11,6 +11,8 @@ mkdir -p "${HOME_SPACE}/install"
 SOURCE_DIR="${HOME_SPACE}/source"
 INSTALL_DIR="${HOME_SPACE}/install"
 
+apt-get install install curl ca-certificates wget libssl-dev autoconf make cmake xz-utils flex bison
+
 export CFLAGS="-Os -fomit-frame-pointer -pipe"
 export LDFLAGS="-static -Wl,--as-needed -Wl,-Map,linker.map"
 export NGINX_MODULES="kjdev/nginx-auth-jwt kjdev/nginx-keyval vision5/ngx_devel_kit openresty/echo-nginx-module openresty/headers-more-nginx-module openresty/set-misc-nginx-module"
