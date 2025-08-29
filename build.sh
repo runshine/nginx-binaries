@@ -1,5 +1,18 @@
 #!/bin/bash
 
+set -e
+
+TZ=Europe/London
+HOME_SPACE="$(cd `dirname $0`;pwd)/"
+
+mkdir -p "${HOME_SPACE}/source"
+mkdir -p "${HOME_SPACE}/build"
+mkdir -p "${HOME_SPACE}/install"
+
+SOURCE_DIR="${HOME_SPACE}/source"
+BUILD_DIR="${HOME_SPACE}/build"
+INSTALL_DIR="${HOME_SPACE}/install"
+
 export CFLAGS="-Os -fomit-frame-pointer -pipe"
 export LINUX_LDFLAGS="-static -Wl,--as-needed -Wl,-Map,linker.map"
 export DARWIN_LDFLAGS="-Wl,-map,linker.map"
@@ -15,3 +28,6 @@ apt-get update -qq && apt install -qq -y libedit-dev libncurses-dev libssl-dev l
 cd /build
 ls -lRt
 ./scripts/build-nginx
+mkdir -p "${INSTALL_DIR}/bin/"
+ls -lRt /build
+cp ./objs/nginx "${INSTALL_DIR}/bin/nginx-linux-$(uname -m)"
