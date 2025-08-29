@@ -45,6 +45,10 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        NGINX_VERSION:
+          - 1.26.x
+          - 1.27.x
+          - 1.28.x
         build_arch: [linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v5,linux/riscv64]
         include:
           - build_name: x86_64
@@ -57,6 +61,10 @@ jobs:
             build_arch: linux/arm/v5
           - build_name: riscv64
             build_arch: linux/riscv64
+          - NJS_VERSION: 0.x.x
+          # Pin older njs version for old stable nginx.
+          - NGINX_VERSION: 1.26.x
+            NJS_VERSION: 0.8.x
     steps:
       - name: Checkout
         uses: actions/checkout@v4
