@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 TZ=Europe/London
 HOME_SPACE="$(cd `dirname $0`;pwd)/"
