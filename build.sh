@@ -23,8 +23,8 @@ export SKIP_SAME_SOURCES="true"
 
 apt-get update -qq && apt install -qq -y libedit-dev libncurses-dev libssl-dev libpcre2-dev libzstd-dev libz-dev libjansson-dev file
 
-ls -lRt
-/build/scripts/build-nginx
+ls -lRt "${HOME_SPACE}"
+"${HOME_SPACE}/scripts/build-nginx"
 mkdir -p "${INSTALL_DIR}/bin/"
-ls -lRt /build
+ls -lRt "${HOME_SPACE}"
 cp ./objs/nginx "${INSTALL_DIR}/bin/nginx-linux-$(uname -m)"

@@ -1,4 +1,4 @@
-FROM debian:latest as builder
+FROM debian:latest AS builder
 LABEL previous-stage=builder
 
 # prepare builder
