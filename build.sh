@@ -11,7 +11,7 @@ mkdir -p "${HOME_SPACE}/install"
 SOURCE_DIR="${HOME_SPACE}/source"
 INSTALL_DIR="${HOME_SPACE}/install"
 
-apt-get install curl ca-certificates wget libssl-dev autoconf make cmake xz-utils flex bison
+apt-get install -y curl ca-certificates wget libssl-dev autoconf make cmake xz-utils flex bison
 
 export CFLAGS="-Os -fomit-frame-pointer -pipe"
 export LDFLAGS="-static -Wl,--as-needed -Wl,-Map,linker.map"
