@@ -46,8 +46,8 @@ jobs:
     strategy:
       matrix:
         NGINX_VERSION:
-          - 1.26.x
-          - 1.27.x
+          #- 1.26.x
+          #- 1.27.x
           - 1.28.x
         build_arch: [linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v5,linux/riscv64]
         include:
@@ -89,6 +89,7 @@ jobs:
           push: false
           tags: local_nginx:latest
           file: Dockerfile
+          env: 
           outputs: |
             type=local,dest=${{ github.workspace }}/output
 
