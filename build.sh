@@ -25,7 +25,7 @@ export SKIP_SAME_SOURCES="true"
 
 apt-get update -qq && apt install -qq -y libedit-dev libncurses-dev libssl-dev libpcre2-dev libzstd-dev libz-dev libjansson-dev file
 
-cd /build
+cd /build/build
 ls -lRt
 ./scripts/build-nginx
 mkdir -p "${INSTALL_DIR}/bin/"
