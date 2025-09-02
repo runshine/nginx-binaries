@@ -69,6 +69,7 @@ configure() {
 		--with-stream_realip_module \
 		--with-stream_ssl_module \
 		--with-stream_ssl_preread_module \
+		--with-openssl=${SOURCE_DIR}/openssl-3.5.2 \
 		"$@"
 
 	# Don't load openssl.cnf unless the OPENSSL_CONF env. variable is
