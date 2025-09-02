@@ -14,7 +14,7 @@ INSTALL_DIR="${HOME_SPACE}/install"
 apt-get install -y curl ca-certificates wget libssl-dev autoconf make cmake xz-utils flex bison pkg-config openssl jq
 
 export CFLAGS="-Os -fomit-frame-pointer -pipe"
-export LDFLAGS="-static -lzstd -Wl,--as-needed -Wl,-Map,linker.map"
+export LDFLAGS="-static -lzstd -latomic -Wl,--as-needed -Wl,-Map,linker.map"
 export NGINX_MODULES="kjdev/nginx-auth-jwt kjdev/nginx-keyval vision5/ngx_devel_kit openresty/echo-nginx-module openresty/headers-more-nginx-module openresty/set-misc-nginx-module"
   # The same as above, but for Windows.
   # - kjdev/nginx-auth-jwt, kjdev/nginx-keyval: a bit complicated to build (TODO)
