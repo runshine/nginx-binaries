@@ -34,7 +34,7 @@ add_module() {
 configure() {
 	set -x  # log commands
 
-	if [ "x${SOURCE_DIR}" = "x" ];then
+	if [ -z "${SOURCE_DIR}" ];then
 		NJS_LIBXSLT=NO \
 		./auto/configure \
 			--prefix="." \
