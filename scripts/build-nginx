@@ -34,43 +34,82 @@ add_module() {
 configure() {
 	set -x  # log commands
 
-	NJS_LIBXSLT=NO \
-	./auto/configure \
-		--prefix="." \
-		--sbin-path="nginx" \
-		--conf-path="nginx.conf" \
-		--pid-path="nginx.pid" \
-		--lock-path="nginx.lock" \
-		--error-log-path=stderr \
-		--http-log-path=access.log \
-		--http-client-body-temp-path="client_body_temp" \
-		--http-proxy-temp-path="proxy_temp" \
-		--user=nobody \
-		--group=users \
-		--with-cc="${CC:-cc}" \
-		--with-cc-opt="${CFLAGS:-}" \
-		--with-ld-opt="${LDFLAGS:-}" \
-		--with-debug \
-		--with-http_ssl_module \
-		--with-http_v2_module \
-		--with-http_realip_module \
-		--with-http_auth_request_module \
-		--with-http_secure_link_module \
-		--without-http_ssi_module \
-		--without-http_mirror_module \
-		--without-http_geo_module \
-		--without-http_split_clients_module \
-		--without-http_fastcgi_module \
-		--without-http_uwsgi_module \
-		--without-http_scgi_module \
-		--without-http_grpc_module \
-		--without-http_memcached_module \
-		--with-stream \
-		--with-stream_realip_module \
-		--with-stream_ssl_module \
-		--with-stream_ssl_preread_module \
-		--with-openssl=${SOURCE_DIR}/openssl-3.5.2 \
-		"$@"
+	if [ "x${SOURCE_DIR}" = "x" ];then
+		NJS_LIBXSLT=NO \
+		./auto/configure \
+			--prefix="." \
+			--sbin-path="nginx" \
+			--conf-path="nginx.conf" \
+			--pid-path="nginx.pid" \
+			--lock-path="nginx.lock" \
+			--error-log-path=stderr \
+			--http-log-path=access.log \
+			--http-client-body-temp-path="client_body_temp" \
+			--http-proxy-temp-path="proxy_temp" \
+			--user=nobody \
+			--group=users \
+			--with-cc="${CC:-cc}" \
+			--with-cc-opt="${CFLAGS:-}" \
+			--with-ld-opt="${LDFLAGS:-}" \
+			--with-debug \
+			--with-http_ssl_module \
+			--with-http_v2_module \
+			--with-http_realip_module \
+			--with-http_auth_request_module \
+			--with-http_secure_link_module \
+			--without-http_ssi_module \
+			--without-http_mirror_module \
+			--without-http_geo_module \
+			--without-http_split_clients_module \
+			--without-http_fastcgi_module \
+			--without-http_uwsgi_module \
+			--without-http_scgi_module \
+			--without-http_grpc_module \
+			--without-http_memcached_module \
+			--with-stream \
+			--with-stream_realip_module \
+			--with-stream_ssl_module \
+			--with-stream_ssl_preread_module \
+			"$@"
+	else
+		NJS_LIBXSLT=NO \
+		./auto/configure \
+			--prefix="." \
+			--sbin-path="nginx" \
+			--conf-path="nginx.conf" \
+			--pid-path="nginx.pid" \
+			--lock-path="nginx.lock" \
+			--error-log-path=stderr \
+			--http-log-path=access.log \
+			--http-client-body-temp-path="client_body_temp" \
+			--http-proxy-temp-path="proxy_temp" \
+			--user=nobody \
+			--group=users \
+			--with-cc="${CC:-cc}" \
+			--with-cc-opt="${CFLAGS:-}" \
+			--with-ld-opt="${LDFLAGS:-}" \
+			--with-debug \
+			--with-http_ssl_module \
+			--with-http_v2_module \
+			--with-http_realip_module \
+			--with-http_auth_request_module \
+			--with-http_secure_link_module \
+			--without-http_ssi_module \
+			--without-http_mirror_module \
+			--without-http_geo_module \
+			--without-http_split_clients_module \
+			--without-http_fastcgi_module \
+			--without-http_uwsgi_module \
+			--without-http_scgi_module \
+			--without-http_grpc_module \
+			--without-http_memcached_module \
+			--with-stream \
+			--with-stream_realip_module \
+			--with-stream_ssl_module \
+			--with-stream_ssl_preread_module \
+			--with-openssl=${SOURCE_DIR}/openssl-3.5.2 \
+			"$@"
+		fi
 
 	# Don't load openssl.cnf unless the OPENSSL_CONF env. variable is
 	# explicitly set. This is to avoid SSL error on Fedora due to some
