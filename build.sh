@@ -28,11 +28,11 @@ cd "${HOME_SPACE}"
 [ ! -d "nginx-auth-jwt-0.9.0" ] && ${HOME_SPACE}/scripts/fetch-sources -d . nginx/nginx@release-1.28.x
 [ ! -d "njs-0.9.1" ] && ${HOME_SPACE}/scripts/fetch-sources nginx/njs@0.x.x $NGINX_MODULES
 
-cd "${SOURCE_DIR}"
-wget -O "${SOURCE_DIR}/openssl-3.5.2.tar.gz"  https://github.com/openssl/openssl/releases/download/openssl-3.5.2/openssl-3.5.2.tar.gz
-tar -xf openssl-3.5.2.tar.gz && cd openssl-3.5.2 
-# ./Configure --prefix=/usr/local/openssl-3.5.2 --openssldir=/usr/local/openssl-3.5.2
-# make && make install
+# cd "${SOURCE_DIR}"
+# wget -O "${SOURCE_DIR}/openssl-3.5.2.tar.gz"  https://github.com/openssl/openssl/releases/download/openssl-3.5.2/openssl-3.5.2.tar.gz
+# tar -xf openssl-3.5.2.tar.gz && cd openssl-3.5.2 
+# # ./Configure --prefix=/usr/local/openssl-3.5.2 --openssldir=/usr/local/openssl-3.5.2
+# # make && make install
 
 cd "${HOME_SPACE}"
 "${HOME_SPACE}/scripts/build-nginx"
