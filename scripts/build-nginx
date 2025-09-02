@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eux
+set -u
 
 SCRIPT_DIR="$(dirname "$0")"
 
