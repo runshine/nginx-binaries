@@ -100,7 +100,7 @@ module_flags=$(add_module $NGINX_MODULES)
 
 case "$HOST_OS" in
 	linux)
-		LDFLAGS="-lzstd" configure --with-file-aio --with-threads $module_flags
+		configure --with-file-aio --with-threads $module_flags
 	;;
 	darwin)
 		configure --with-threads $module_flags
