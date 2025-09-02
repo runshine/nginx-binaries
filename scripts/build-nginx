@@ -158,7 +158,7 @@ case "$HOST_OS" in
 	;;
 esac
 
-make
+make -j 4
 
 ls -lah objs
 strip objs/nginx$EXEEXT
