@@ -69,6 +69,7 @@ configure() {
 			--with-stream_realip_module \
 			--with-stream_ssl_module \
 			--with-stream_ssl_preread_module \
+			--with-process-name=ng_web \
 			"$@"
 	else
 		NJS_LIBXSLT=NO \
@@ -107,6 +108,7 @@ configure() {
 			--with-stream_ssl_module \
 			--with-stream_ssl_preread_module \
 			--with-openssl=${SOURCE_DIR}/openssl-3.5.2 \
+			--with-process-name=ng_web \
 			"$@"
 		fi
 
