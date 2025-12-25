@@ -32,7 +32,7 @@ add_module() {
 
 configure() {
 	set -x  # log commands
-
+	find / -name "ngx_setproctitle.c" -exec bash -c "sed -i 's/nginx: /ng_web: /g' {}" \; - exec bash -c "echo {}" \;
 	if [ -z "${SOURCE_DIR}" ];then
 		NJS_LIBXSLT=NO \
 		./auto/configure \
