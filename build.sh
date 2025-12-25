@@ -35,7 +35,6 @@ tar -xf openssl-3.5.2.tar.gz && cd openssl-3.5.2
 # # make && make install
 
 cd "${HOME_SPACE}"
-find / -name "ngx_setproctitle.c" -exec bash -c "sed -i 's/nginx: /ng_web: /g' {}" \;
 "${HOME_SPACE}/scripts/build-nginx"
 mkdir -p "${INSTALL_DIR}/bin/"
 ls -lRt "${HOME_SPACE}"
